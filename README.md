@@ -6,35 +6,27 @@ The for loop iterates over the list to check for a word and ignores if a space.E
 Check the code here!
 
 ```python
-def words(string):  
-
-    new_list = string.replace('\n', ' ').replace('\t', ' ').split()  
-
-    string_dict = {}
 
     
 
-    for word in new_list:
+```
 
-        # ignore spaces
+FINDING MAXIMUM AND MINIMUM NUMBER
 
-        if not word:
+Below is a function which takes in a list as an input and returns the minimum and maximum values of the list in an array .
+`maximum=max(list)`-gets the maximum number 
+`minimum=min(list)`-gets the minimum number
+`if maximum !=minimum:`checks for equality
+`return [minimum,maximum]`-returns the two numbers in an array,that is if they are not equal
+`	else:
+return [minimum]`-returns the minimum value which is the same as the maximum number if the numbers are equal.
+Check it out!
 
-            continue
-
-        
-
-        #this  count word
-
-        word_count = new_list.count(word)
-
-        if word.isdigit():      
-
-            word = int(word)
-
-        # add word to string dict
-
-        string_dict[word] = word_count
-
-    return string_dict  
-print words("I am Fred.Fred i am")```
+```python
+def find_max_min(list):
+	maximum=max(list)
+	minimum=min(list)
+	if maximum !=minimum:
+		return [minimum,maximum]
+	else:
+return [minimum]```
