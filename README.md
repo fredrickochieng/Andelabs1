@@ -63,3 +63,51 @@ def find_max_min(list):
 		return [minimum,maximum]
 	else:
 return [minimum]```
+
+COMMANDLINE APPLICATION PROGRAMMING INTERFACE(API)
+```python
+import json
+import urllib.request
+
+
+def uni_search():
+    url = "http://api.open-notify.org/iss-now.json"
+    response = urllib.request.urlopen(url)
+    jsonstr = response.read().decode()
+    final_dict = json.loads(jsonstr)
+    print(final_dict)
+
+
+if __name__ == '__main__':
+    uni_search()
+    ```
+
+UNISEARCH-is an API that searches for coordinates and time stamp of a location .In this case International Space Station.
+Application program interface (API) is a set of routines, protocols, and tools for building software applications. An API specifies how software components should interact. Additionally, APIs are used when programming graphical user interface (GUI) components.
+This application uses the `urllib library` to send a request to the ISS API `http://api.open-notify.org/iss-now.json` and return its coordinates and time stamp.It use the `Json` library to decode the coded response as per the request sent in an http protocol.
+The coded response is then returned as a python dictionary as shown below!
+```python
+>>> import json
+>>> import urllib.request
+>>> 
+>>> 
+>>> def uni_search():
+...     url = "http://api.open-notify.org/iss-now.json"
+...     response = urllib.request.urlopen(url)
+...     jsonstr = response.read().decode()
+...     final_dict = json.loads(jsonstr)
+...     print(final_dict)
+... 
+>>> 
+>>> if __name__ == '__main__':
+...     uni_search()
+... 
+
+
+{'message': 'success', 'iss_position': {'longitude': '148.4316', 'latitude': '5.7012'}, 'timestamp': 1484821669}
+>>> 
+```
+
+
+
+
